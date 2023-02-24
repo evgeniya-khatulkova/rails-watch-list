@@ -6,8 +6,6 @@ class Movie < ApplicationRecord
   private
 
   def ensure_no_children
-    unless self.bookmarks.empty?
-      raise ActiveRecord::InvalidForeignKey
-      end
-    end
+    raise ActiveRecord::InvalidForeignKey unless bookmarks.empty?
+  end
 end
