@@ -1,0 +1,10 @@
+<%= simple_form_for @bookmark do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.association :list %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to lists_path do%>
+  <p>Back to all lists</p>
+<%end%>
